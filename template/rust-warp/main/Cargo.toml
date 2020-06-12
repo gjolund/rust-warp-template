@@ -1,0 +1,10 @@
+[package]
+name = "main"
+version = "0.1.0"
+authors = ["Austin Rivas <austinrivas@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+handler = { path = "../function" }
+tokio = { version = "0.2", features = ["macros"] }
+warp = "0.2"

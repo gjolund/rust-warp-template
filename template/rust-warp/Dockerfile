@@ -1,0 +1,18 @@
+FROM rust-warp-builder as builder
+
+COPY ./main/Cargo.lock ./main/Cargo.toml ./main/
+COPY ./main/src ./main/src
+COPY ./function/Cargo.lock ./function/Cargo.toml ./function/
+COPY ./function/src ./function/src
+
+RUN cd main \
+    && cargo build \
+        --target x86_64-unknown-linux-musl \
+        --release
+
+FROM rust-warp-runner as runner
+
+COPY --from=builder /home/rust/main/target/x86_64-unknown-linux-musl/release/main /usr/bin/main
+RUN chmod +x /usr/bin/main
+
+CMD ["fwatchdog"]
