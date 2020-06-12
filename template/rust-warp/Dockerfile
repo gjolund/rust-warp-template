@@ -1,4 +1,4 @@
-FROM rust-warp-builder as builder
+FROM austinrivas/rust-warp-builder:stable as builder
 
 COPY ./main/Cargo.lock ./main/Cargo.toml ./main/
 COPY ./main/src ./main/src
@@ -10,7 +10,7 @@ RUN cd main \
         --target x86_64-unknown-linux-musl \
         --release
 
-FROM rust-warp-runner as runner
+FROM austinrivas/rust-warp-runner:stable as runner
 
 COPY --from=builder /home/rust/main/target/x86_64-unknown-linux-musl/release/main /usr/bin/main
 RUN chmod +x /usr/bin/main
