@@ -26,8 +26,8 @@ faas new <name> --lang rust-warp
 
 This template provides a thin wrapper around the [Rust Warp Server](https://github.com/seanmonstar/warp). The wrapper implementation closely mirrors the [example server](https://github.com/seanmonstar/warp#example).
 
-### [Example Handler]()
-### [Wrapper]()
+### [Example Handler](https://github.com/austinrivas/rust-warp-template/blob/master/template/rust-warp/function/src/lib.rs)
+### [Wrapper](https://github.com/austinrivas/rust-warp-template/blob/master/template/rust-warp/main/src/main.rs)
 
 ## Example Function
 
