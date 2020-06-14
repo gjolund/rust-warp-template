@@ -8,8 +8,7 @@ ENV mode="http"
 ENV upstream_url="http://127.0.0.1:3000"
 
 # Install packages and add non-root user
-RUN apk --no-cache add curl ca-certificates \
-    && addgroup -S app && adduser -S -g app app
+RUN addgroup -S app && adduser -S -g app app
 
 ENV USER=app
 
