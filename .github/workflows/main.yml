@@ -1,10 +1,12 @@
-on: [push, pull_request]
+name: Main
 
-name: Main Wrapper Test / Check / Lint / Format
+on:
+  pull_request
+
+env:
+  MANIFEST_PATH: ./template/rust-warp/main/Cargo.toml
 
 jobs:
-  env:
-    MANIFEST_PATH: ./template/rust-warp/main/Cargo.toml
   check:
     name: Check
     runs-on: ubuntu-latest
@@ -18,10 +20,10 @@ jobs:
       - uses: actions-rs/cargo@v1
         with:
           command: check
-          arg: --manifest-path $MANIFEST_PATH
+          args: --manifest-path ${{ env.MANIFEST_PATH }}
 
   test:
-    name: Test Suite
+    name: Test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -33,10 +35,10 @@ jobs:
       - uses: actions-rs/cargo@v1
         with:
           command: test
-          args: --manifest-path $MANIFEST_PATH
+          args: --manifest-path ${{ env.MANIFEST_PATH }}
 
   fmt:
-    name: Rustfmt
+    name: Format
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -49,10 +51,10 @@ jobs:
       - uses: actions-rs/cargo@v1
         with:
           command: fmt
-          args: --all --manifest-path $MANIFEST_PATH -- --check
+          args: --all --manifest-path ${{ env.MANIFEST_PATH }} -- --check
 
   clippy:
-    name: Clippy
+    name: Lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -65,4 +67,4 @@ jobs:
       - uses: actions-rs/cargo@v1
         with:
           command: clippy
-          args: --manifest-path $MANIFEST_PATH -- -D warnings
+          args: --manifest-path ${{ env.MANIFEST_PATH }} -- -D warnings
