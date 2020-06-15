@@ -6,5 +6,7 @@ edition = "2018"
 
 [dependencies]
 handler = { path = "../function" }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
 tokio = { version = "0.2", features = ["macros"] }
 warp = "0.2"
