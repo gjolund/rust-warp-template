@@ -1,7 +1,3 @@
-use warp;
-
-use handler;
-
 #[tokio::main]
 async fn main() {
     warp::serve(handler::main())
