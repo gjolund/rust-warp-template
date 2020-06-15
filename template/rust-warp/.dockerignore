@@ -1,7 +1,5 @@
-target
-Cargo.toml
-Cargo.lock
-build
-tests
+Dockerfile
+.dockerignore
 .stignore
-okteto.yml
+**/okteto.yml
+**/target
