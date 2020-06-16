@@ -66,6 +66,6 @@ A runner Docker alpine image that is optimized to run OpenFaaS rust binaries wit
 
 Based on `rust-warp-builder` this image is designed to run `rust-warp` OpenFaaS functions on the [Okteto](https://okteto.com/) remote development platform. It includes pre-compiled base dependencies and additional configuration to optimize it for okteto. For additional information on how to configure a function for okteto see [openfaas_rust-warp_func](https://github.com/austinrivas/openfaas_rust-warp_func).
 
-### Actions
+### CI / CD
 
 This repo includes [two github actions](https://github.com/austinrivas/rust-warp-template/blob/master/.github/workflows) to test / lint / format code in the main wrapper and function.
