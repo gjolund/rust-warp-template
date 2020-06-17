@@ -58,9 +58,9 @@ A builder Docker image that pre-compiles the included dependencies of the `rust-
 
 Pre-compiling dependencies in this manner speeds up function builds by a significant amount.
 
-### [rust-warp-runner](https://hub.docker.com/r/austinrivas/rust-warp-runner/dockerfile)
+### [openfaas-binary-runner](https://hub.docker.com/r/austinrivas/openfaas-binary-runner/dockerfile)
 
-A runner Docker alpine image that is optimized to run OpenFaaS rust binaries with minimal dependencies.
+A runner Docker alpine image that is optimized to run OpenFaaS binaries with minimal dependencies.
 
 ### [rust-warp-okteto](https://hub.docker.com/r/austinrivas/rust-warp-okteto/dockerfile)
 
