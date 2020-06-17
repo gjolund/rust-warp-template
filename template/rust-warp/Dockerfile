@@ -10,7 +10,7 @@ RUN cd main \
         --target x86_64-unknown-linux-musl \
         --release
 
-FROM austinrivas/rust-warp-runner:stable as runner
+FROM austinrivas/openfaas-binary-runner:stable as runner
 
 COPY --from=builder /home/rust/main/target/x86_64-unknown-linux-musl/release/main /usr/bin/main
 
